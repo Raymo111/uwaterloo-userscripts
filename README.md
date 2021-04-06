@@ -1,5 +1,8 @@
 # uwaterloo-userscripts
-My userscripts for UWaterloo websites. You should use something like [TamperMonkey](https://www.tampermonkey.net/) (for Chromium-based browsers) or [GreaseMonkey](https://www.greasespot.net/) (for FireFox-based browsers) to manage your userscripts.
+My userscripts for UWaterloo websites.
+
+## Dependencies
+You should use something like [TamperMonkey](https://www.tampermonkey.net/) (for Chromium-based browsers) or [GreaseMonkey](https://www.greasespot.net/) (for FireFox-based browsers) to manage your userscripts.
 
 ## Installation links
 If you have (Tamper/Grease)Monkey installed, you can use one of these links to install these userscripts:
