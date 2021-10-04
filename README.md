@@ -10,6 +10,7 @@ If you have (Tamper/Grease)Monkey installed, you can use one of these links to i
 | Userscript | Installation link                                                                                        |
 |:----------:|:--------------------------------------------------------------------------------------------------------:|
 | Autologin  | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/autologin.user.js)                |
+| Keepalive  | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/keepalive.user.js)                |
 
 ## Other scripts I use and recommend
 - https://github.com/jfdoming/uwaterloo-cs-userscripts
