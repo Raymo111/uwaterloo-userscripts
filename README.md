@@ -7,10 +7,11 @@ You should use something like [TamperMonkey](https://www.tampermonkey.net/) (for
 ## Installation links
 If you have (Tamper/Grease)Monkey installed, you can use one of these links to install these userscripts:
 
-| Userscript | Installation link                                                                                        |
-|:----------:|:--------------------------------------------------------------------------------------------------------:|
-| Autologin  | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/autologin.user.js)                |
-| Keepalive  | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/keepalive.user.js)                |
+| Userscript        | Installation link                                                                                |
+|:-----------------:|:------------------------------------------------------------------------------------------------:|
+| Autologin         | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/autologin.user.js)        |
+| Keepalive         | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/keepalive.user.js)        |
+| Improved MarmoUI  | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/improved-marmoui.user.js) |
 
 ## Other scripts I use and recommend
 - https://github.com/jfdoming/uwaterloo-cs-userscripts
