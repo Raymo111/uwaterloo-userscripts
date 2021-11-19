@@ -9,13 +9,11 @@
 // Based on MarmoUI by Shida Li and Erica Xu
 //
 // ==UserScript==
-// @name		ImprovedMarmoUI
-// @description	MarmoUI Improved! Better UI and functionality
-// @author		Raymond Li <scripts@raymond.li>
-// @version		1.0
-// @match		https://marmoset.student.cs.uwaterloo.ca*
-// @updateURL	https://github.com/Raymo111/uwaterloo-userscripts/raw/master/improved-marmoui.user.js
-// @downloadURL	https://github.com/Raymo111/uwaterloo-userscripts/raw/master/improved-marmoui.user.js
+// @name			ImprovedMarmoUI
+// @description		MarmoUI Improved! Better UI and functionality
+// @author			Raymond Li <scripts@raymond.li>
+// @version			1.0
+// @include			https://marmoset.student.cs.uwaterloo.ca*
 // ==/UserScript==
 
 //Variables here are volatile. They are not usable from within the page, but only within this script
@@ -263,13 +261,13 @@ function runMarmoUI()
 						a = $.text([a]);
 						b = $.text([b]);
 
-                        if(parseMarmosetDate(a) && parseMarmosetDate(b)) {
-                            a = parseMarmosetDate(a);
-                            b = parseMarmosetDate(b);
-                        } else if(parseInt(a) && parseInt(b)) {
-                            a = parseInt(a);
-                            b = parseInt(b);
-                        }
+						if(parseMarmosetDate(a) && parseMarmosetDate(b)) {
+							a = parseMarmosetDate(a);
+							b = parseMarmosetDate(b);
+						} else if(parseInt(a) && parseInt(b)) {
+							a = parseInt(a);
+							b = parseInt(b);
+						}
 
 						return a > b ? (inverse ? -1 : 1) : (inverse ? 1 : -1);
 					}, function()
@@ -298,29 +296,29 @@ function runMarmoUI()
 		}
 	}
 
-    function parseMarmosetDate(date)
-    {
-        date=date.trim();
-        //Parse date in form:  08 Nov, 10:00 PM
-        function shortForm(){
-            return Date.parse((new Date()).getFullYear() + " " + date.replace(",","").match(/[a-zA-Z0-9 \:]+/)[0].trim());
-        }
-        //Parse date in form: Fri, 27 Oct 2017 at 11:21 PM
-        function longForm(){
-            return Date.parse(date.split(",")[1].match(/[a-zA-Z0-9 \:]+/)[0].trim().replace(" at ", " "));
-        }
-        //Parse date in form: Fri, 27 Oct at 11:26 PM
-        function tokenForm() {
-            return Date.parse((new Date()).getFullYear() + " " + date.split(",")[1].match(/[a-zA-Z0-9 \:]+/)[0].trim().replace(" at ", " "));
-        }
-        try {
+	function parseMarmosetDate(date)
+	{
+		date=date.trim();
+		//Parse date in form:  08 Nov, 10:00 PM
+		function shortForm(){
+			return Date.parse((new Date()).getFullYear() + " " + date.replace(",","").match(/[a-zA-Z0-9 \:]+/)[0].trim());
+		}
+		//Parse date in form: Fri, 27 Oct 2017 at 11:21 PM
+		function longForm(){
+			return Date.parse(date.split(",")[1].match(/[a-zA-Z0-9 \:]+/)[0].trim().replace(" at ", " "));
+		}
+		//Parse date in form: Fri, 27 Oct at 11:26 PM
+		function tokenForm() {
+			return Date.parse((new Date()).getFullYear() + " " + date.split(",")[1].match(/[a-zA-Z0-9 \:]+/)[0].trim().replace(" at ", " "));
+		}
+		try {
 						if (date.match(/(19|20)\d{2}/)) return longForm();
 						return shortForm() || tokenForm();
-        }
-        catch (err){
-            return false;
-        }
-    }
+		}
+		catch (err){
+			return false;
+		}
+	}
 
 	//Trims the .text() of all jquery elements
 	function trimInner(elements)
@@ -671,21 +669,21 @@ function runMarmoUI()
 			//asyncLoadPage($(row).find("td:eq(2)"), link, loadSubmission, -1);
 			//asyncLoadPage($(row).find("td:eq(3)"), link, loadTokensFromSubmission, -1);
 
-            // Move link from submissions to project column
-            $(row).find("td:eq(0) a").attr("href", link);
+			// Move link from submissions to project column
+			$(row).find("td:eq(0) a").attr("href", link);
 		});
 
-        jQuery.delColumn = function (table, col) {
-            var rows = jQuery('tr', table);
-            var cols;
-            rows.each(function() {
-                cols = jQuery(this).children('th, td');
-                cols.eq(col).detach();
-            });
-        }
-        // Remove useless columns
-        jQuery.delColumn($("table"), 3);
-        jQuery.delColumn($("table"), 5);
+		jQuery.delColumn = function (table, col) {
+			var rows = jQuery('tr', table);
+			var cols;
+			rows.each(function() {
+				cols = jQuery(this).children('th, td');
+				cols.eq(col).detach();
+			});
+		}
+		// Remove useless columns
+		jQuery.delColumn($("table"), 3);
+		// jQuery.delColumn($("table"), 5);
 
 		//Add a submission popup and an Iframe for submitting
 		addSubmissionBox();
@@ -704,9 +702,9 @@ function runMarmoUI()
 			var popup = $(".submission-popup").html("");
 			//Add Close, Project, Submissions and Deadline
 			popup.append("<a id='submission-close' href='#' onclick='$(\"#submission-box\").hide();return false;'>Close</a>");
-			popup.append("<h2>Project: " + row.find("td:eq(0)").html() + " (" + row.find("td:eq(6)").html() + ")</h2>");
+			popup.append("<h2>Project: " + row.find("td:eq(0)").html() + " (" + row.find("td:eq(5)").html() + ")</h2>");
 			popup.append("<p>Submissions: <a href='" + row.find("td:eq(1) a").attr("href") + "'>view</a></p>");
-			popup.append("<p>Due: " + row.find("td:eq(5)").html() + "</p>");
+			popup.append("<p>Due: " + row.find("td:eq(4)").html() + "</p>");
 			//Add the submission form
 			popup.append("<form target='sumbission-loader' enctype='multipart/form-data' action='/action/SubmitProjectViaWeb' method='POST'>" +
 			"<input type='hidden' name='projectPK' value='" + projectPK + "'>" +
