@@ -9,11 +9,13 @@
 // Based on MarmoUI by Shida Li and Erica Xu
 //
 // ==UserScript==
-// @name				  ImprovedMarmoUI
-// @description		MarmoUI Improved! Better UI and functionality
-// @author				Raymond Li <scripts@raymond.li>
-// @version				1.0
-// @include				https://marmoset.student.cs.uwaterloo.ca*
+// @name		ImprovedMarmoUI
+// @description	MarmoUI Improved! Better UI and functionality
+// @author		Raymond Li <scripts@raymond.li>
+// @version		1.0
+// @match		https://marmoset.student.cs.uwaterloo.ca*
+// @updateURL	https://github.com/Raymo111/uwaterloo-userscripts/raw/master/improved-marmoui.user.js
+// @downloadURL	https://github.com/Raymo111/uwaterloo-userscripts/raw/master/improved-marmoui.user.js
 // ==/UserScript==
 
 //Variables here are volatile. They are not usable from within the page, but only within this script
