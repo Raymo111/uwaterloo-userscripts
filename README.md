@@ -11,7 +11,10 @@ If you have (Tamper/Grease)Monkey installed, you can use one of these links to i
 |:-----------------:|:------------------------------------------------------------------------------------------------:|
 | Autologin         | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/autologin.user.js)        |
 | Keepalive         | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/keepalive.user.js)        |
-| Improved MarmoUI  | [Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/improved-marmoui.user.js) |
+| Improved MarmoUI*  | [Dependency Install](https://github.com/jfdoming/uwaterloo-cs-userscripts/raw/master/marmoset-extensions.user.js)
+[Install](https://github.com/Raymo111/uwaterloo-userscripts/raw/master/improved-marmoui.user.js) |
+
+\*jfdoming's Marmoset Extension is required for Improved MarmoUI to work.
 
 ## Other scripts I use and recommend
 - https://github.com/jfdoming/uwaterloo-cs-userscripts
