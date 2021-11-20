@@ -9,11 +9,11 @@
 // Based on MarmoUI by Shida Li and Erica Xu
 //
 // ==UserScript==
-// @name			ImprovedMarmoUI
+// @name				  ImprovedMarmoUI
 // @description		MarmoUI Improved! Better UI and functionality
-// @author			Raymond Li <scripts@raymond.li>
-// @version			1.0
-// @include			https://marmoset.student.cs.uwaterloo.ca*
+// @author				Raymond Li <scripts@raymond.li>
+// @version				1.0
+// @include				https://marmoset.student.cs.uwaterloo.ca*
 // ==/UserScript==
 
 //Variables here are volatile. They are not usable from within the page, but only within this script
@@ -709,13 +709,16 @@ function runMarmoUI()
 			popup.append("<form target='sumbission-loader' enctype='multipart/form-data' action='/action/SubmitProjectViaWeb' method='POST'>" +
 			"<input type='hidden' name='projectPK' value='" + projectPK + "'>" +
 			"<input type='hidden' name='submitClientTool' value='web'>" +
-			"<input type='file' name='file' size='20'></form>" +
+			"<input id='uploader' type='file' name='file' size='20'></form>" +
 			"<div class='submit-button'><p><a onclick='$(\"form\").submit();'>Submit</a></p></div>");
 
 			//Fix the anchor having an extra space at the end
 			trimInner($("h2 a"));
 			//Show the popup box
 			$("#submission-box").show();
+
+			// Autoclick Choose file
+			$("#uploader").trigger("click");
 		});
 
 		//Add highlight to table rows
@@ -808,10 +811,13 @@ function runMarmoUI()
 			popup.append("<form target='sumbission-loader' enctype='multipart/form-data' action='/action/SubmitProjectViaWeb' method='POST'>" +
 			"<input type='hidden' name='projectPK' value='" + projectPK + "'>" +
 			"<input type='hidden' name='submitClientTool' value='web'>" +
-			"<input type='file' name='file' size='20'></form>" +
+			"<input id='uploader' type='file' name='file' size='20'></form>" +
 			"<div class='submit-button'><p><a onclick='$(\"form\").submit();'>Submit</a></p></div>");
 			//Show the popup box
 			$("#submission-box").show();
+
+			// Autoclick Choose file
+			$("#uploader").trigger("click");
 		});
 
 		//Add highlight to table rows
@@ -900,10 +906,11 @@ function runMarmoUI()
 	{
 		case PAGE.LOGIN.value:
 			//Remove Logout button
-			$("div.logout").remove();
+// 			$("div.logout").remove();
 			//Chang submit button
 			$("input[type='submit']").attr("value", "Use this account").attr("onclick", "$(this).attr('value', 'as')");
-			$("p:contains('please login as')").remove();
+			$("input[type='submit']").click()
+// 			$("p:contains('please login as')").remove();
 		break;
 		case PAGE.COURSE_LIST.value:
 			//TODO: make this into a table?
